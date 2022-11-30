@@ -1,0 +1,26 @@
+form {
+  background-color: rgb(100, 100, 249);
+  width: 100%;
+  width: 200px;
+  padding: 3px 15px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 2.5%;
+  /* float: left; */
+}
+
+.card {
+  background-color: rgb(164, 152, 152);
+  width: 100%;
+  width: 240px;
+  float: left;
+  padding: 10px;
+  margin: 1px;
+  border-spacing: 2px;
+  border-radius: 2.5%;
+  box-shadow: 0 5px 3px rgba(0, 0, 0, 0.3);
+}
+
+.btn {
+  padding: 3px 25px;
+}
