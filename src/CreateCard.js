@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
+import axios from "axios";
 
 function Card(props) {
   const [card, setCard] = useState({
@@ -20,7 +19,16 @@ function Card(props) {
   }
 
   function submitCard(event) {
-    props.onAdd(card);
+    event.preventDefault();
+    const newCard = {
+      company: card.company,
+      number: card.number,
+      player: card.player,
+      team: card.team,
+      position: card.position,
+    };
+
+    axios.post("http://localhost:5000/addCard", newCard);
 
     setCard({
       company: "",
@@ -29,8 +37,6 @@ function Card(props) {
       team: "",
       position: "",
     });
-
-    event.preventDefault();
   }
 
   return (
