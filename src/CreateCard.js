@@ -15,7 +15,6 @@ function Card(props) {
     team: "",
     position: "",
     frontImgSrc: "",
-    backImgSrc: "",
   });
 
   function handleChange(event) {
@@ -36,7 +35,6 @@ function Card(props) {
       team: card.team,
       position: card.position,
       frontImgSrc: card.frontImgSrc,
-      backImgSrc: card.backImgSrc,
     };
 
     axios.post("http://localhost:5000/addCard", newCard);
@@ -49,7 +47,6 @@ function Card(props) {
       team: "",
       position: "",
       frontImgSrc: "",
-      backImgSrc: "",
     });
   }
 
@@ -167,19 +164,6 @@ function Card(props) {
             placeholder="Topps, Upper Deck, etc..."
             onChange={handleChange}
             value={card.frontImgSrc}
-          />
-        </FloatingLabel>
-        <FloatingLabel
-          controlId="floatingInput"
-          label="Back Image Link Address"
-          className="mb-1 floatinglabel"
-        >
-          <Form.Control
-            type="string"
-            name="backImgSrc"
-            placeholder="Topps, Upper Deck, etc..."
-            onChange={handleChange}
-            value={card.backImgSrc}
           />
         </FloatingLabel>
         <Button variant="dark" size="sm" className="btn" onClick={submitCard}>

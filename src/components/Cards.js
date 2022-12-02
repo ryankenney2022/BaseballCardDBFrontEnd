@@ -1,4 +1,11 @@
 import React, { useEffect, useState } from "react";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 function Cards() {
   const [cards, setCards] = useState([
@@ -10,7 +17,6 @@ function Cards() {
       team: "",
       position: "",
       frontImgSrc: "",
-      backImgSrc: "",
     },
   ]);
 
@@ -25,18 +31,37 @@ function Cards() {
   });
 
   return (
-    <div>
+    <div className="collection">
       {cards.map((cardItem, index) => (
-        <div className="card">
-          <img src={cardItem.frontImgSrc} alt="Card Front" className="img" />
-          <img src={cardItem.backImgSrc} alt="Card Back" className="img" />
-          <p>{cardItem.company}</p>
-          <p>{cardItem.year}</p>
-          <p>{cardItem.number}</p>
-          <p>{cardItem.player}</p>
-          <p>{cardItem.team}</p>
-          <p>{cardItem.position}</p>
-        </div>
+        <Card sx={{ maxWidth: 345 }}>
+          <CardMedia
+            component="img"
+            alt="Card Front"
+            height="450"
+            image={cardItem.frontImgSrc}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              {cardItem.player}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              <p>
+                {cardItem.company} {cardItem.year} #{cardItem.number}
+              </p>
+              <p>
+                {cardItem.team} {cardItem.position}
+              </p>
+            </Typography>
+          </CardContent>
+          <CardActions className="cardbtnSpace">
+            <Button className="btn" size="small">
+              Edit
+            </Button>
+            <Button className="btn btnRight" size="small">
+              <DeleteIcon />
+            </Button>
+          </CardActions>
+        </Card>
       ))}
     </div>
   );
