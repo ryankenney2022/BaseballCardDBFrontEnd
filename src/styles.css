@@ -4,6 +4,7 @@
 
 body {
   margin: 0;
+  width: 100%;
 }
 form {
   background-color: rgb(100, 100, 249);
@@ -16,25 +17,42 @@ form {
   /* float: left; */
 }
 
+.floatinglabel {
+  padding: none;
+  margin: 0 0;
+}
 .btn {
   padding: 3px 25px;
+  width: 5rem;
+  display: flex;
+  justify-content: center;
 }
 
 .card {
   background-color: rgb(164, 152, 152);
   width: 100%;
-  width: 240px;
-  float: left;
-  padding: 10px;
+  width: 250px;
+  /* float: center; */
+  /* padding: 10px; */
   margin: 1px;
-  border-spacing: 2px;
-  border-radius: 2.5%;
+  border-spacing: 4px;
+  border-radius: 3%;
   box-shadow: 0 5px 3px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 1rem;
 }
 
-.container {
-  margin: 1rem;
+.collection {
+  margin: none;
+  padding: none;
   text-align: center;
+}
+
+.img {
+  width: 85%;
 }
 
 .nav {
@@ -73,4 +91,9 @@ form {
 
 .site-title {
   font-size: 2rem;
+}
+
+.addCard {
+  display: flex;
+  justify-content: center;
 }

@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "@mui/material/Button";
 import "./styles.css";
 
 function card(props) {
@@ -16,7 +15,7 @@ function card(props) {
         <p>{props.team}</p>
         <p>{props.position}</p>
         <div>
-          <Button className="btn" variant="contained" onClick={handleClick}>
+          <Button className="btn" variant="container" onClick={handleClick}>
             Delete
           </Button>
         </div>

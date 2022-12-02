@@ -4,10 +4,13 @@ function Cards() {
   const [cards, setCards] = useState([
     {
       company: "",
+      year: "",
       number: "",
       player: "",
       team: "",
       position: "",
+      frontImgSrc: "",
+      backImgSrc: "",
     },
   ]);
 
@@ -23,14 +26,16 @@ function Cards() {
 
   return (
     <div>
-      <h1>Cards in Collection</h1>
       {cards.map((cardItem, index) => (
         <div className="card">
-          <h2>{cardItem.company}</h2>
-          <h2>{cardItem.number}</h2>
-          <h2>{cardItem.player}</h2>
-          <h2>{cardItem.team}</h2>
-          <h2>{cardItem.position}</h2>
+          <img src={cardItem.frontImgSrc} alt="Card Front" className="img" />
+          <img src={cardItem.backImgSrc} alt="Card Back" className="img" />
+          <p>{cardItem.company}</p>
+          <p>{cardItem.year}</p>
+          <p>{cardItem.number}</p>
+          <p>{cardItem.player}</p>
+          <p>{cardItem.team}</p>
+          <p>{cardItem.position}</p>
         </div>
       ))}
     </div>
