@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-import Col from "react-bootstrap/Col";
+import Button from "@mui/material/Button";
 import Row from "react-bootstrap/Row";
 
 function Card(props) {
@@ -74,6 +73,7 @@ function Card(props) {
             aria-label="Floating label select example"
             className="floatinglabel"
           >
+            <option value="Select">Select card brand...</option>
             <option value="Bowman">Bowman</option>
             <option value="Donruss">Donruss</option>
             <option value="Fleer">Fleer</option>
@@ -166,7 +166,7 @@ function Card(props) {
             value={card.frontImgSrc}
           />
         </FloatingLabel>
-        <Button variant="dark" size="sm" className="btn" onClick={submitCard}>
+        <Button className="btn" variant="dark" size="sm" onClick={submitCard}>
           Submit
         </Button>
       </Row>
