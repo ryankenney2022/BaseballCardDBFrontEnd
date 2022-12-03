@@ -49,14 +49,20 @@ form {
   padding: 1 1rem;
 }
 
+.card-img {
+  min-height: 25vw;
+  max-height: 50vw;
+}
+
 .collection {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   justify-content: space-between;
-  margin: none;
-  padding: auto;
+  margin: auto;
+  padding: 15px;
   border-spacing: 4px;
   text-align: center;
-  width: auto;
+  width: 85vw;
   gap: 0.5rem;
 }
 

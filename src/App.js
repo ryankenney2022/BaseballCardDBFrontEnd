@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="collection">
+      <div>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/collection" element={<Collection />} />

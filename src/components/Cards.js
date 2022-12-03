@@ -42,44 +42,41 @@ function Cards() {
   }
 
   return (
-    <div>
-      <Grid container spacing={2}>
-        {cards.map((cardItem, index) => (
-          <Grid item xs={8}>
-            <Card key={index} sx={{ maxWidth: 345 }}>
-              <CardMedia
-                component="img"
-                alt="Card Front"
-                height="450"
-                image={cardItem.frontImgSrc}
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                  {cardItem.player}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {cardItem.company} {cardItem.year} #{cardItem.number}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {cardItem.team} {cardItem.position}
-                </Typography>
-              </CardContent>
-              <CardActions className="cardbtnSpace">
-                <Button className="btn" size="small">
-                  Edit
-                </Button>
-                <Button
-                  onClick={(e) => deleteCard(cardItem._id, e)}
-                  className="btn"
-                  size="small"
-                >
-                  <DeleteIcon />
-                </Button>
-              </CardActions>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
+    <div className="collection">
+      {cards.map((cardItem, index) => (
+        <Card key={index} sx={{ maxWidth: 345 }}>
+          <CardMedia
+            component="img"
+            className="card-img"
+            alt="Card Front"
+            // height="450"
+            image={cardItem.frontImgSrc}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              {cardItem.player}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              {cardItem.company} {cardItem.year} #{cardItem.number}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              {cardItem.team} {cardItem.position}
+            </Typography>
+          </CardContent>
+          <CardActions className="cardbtnSpace">
+            <Button className="btn" size="small">
+              Edit
+            </Button>
+            <Button
+              onClick={(e) => deleteCard(cardItem._id, e)}
+              className="btn"
+              size="small"
+            >
+              <DeleteIcon />
+            </Button>
+          </CardActions>
+        </Card>
+      ))}
     </div>
   );
 }
