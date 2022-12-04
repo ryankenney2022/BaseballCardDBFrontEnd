@@ -7,7 +7,6 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import DeleteIcon from "@mui/icons-material/Delete";
-import Grid from "@mui/material/Grid";
 
 function Cards() {
   const [cards, setCards] = useState([
@@ -15,11 +14,12 @@ function Cards() {
       _id: "",
       company: "",
       year: "",
-      number: "",
+      number: 0,
       player: "",
       team: "",
       position: "",
       frontImgSrc: "",
+      quantity: 0,
     },
   ]);
 
@@ -32,6 +32,7 @@ function Cards() {
       })
       .then((jsonRes) => setCards(jsonRes));
   });
+
   function deleteCard(id, e) {
     e.preventDefault();
 
@@ -67,6 +68,9 @@ function Cards() {
             <Button className="btn" size="small">
               Edit
             </Button>
+            <Typography variant="body2" color="text.secondary">
+              # Owned ({cardItem.quantity})
+            </Typography>
             <Button
               onClick={(e) => deleteCard(cardItem._id, e)}
               className="btn"
@@ -80,5 +84,4 @@ function Cards() {
     </div>
   );
 }
-
 export default Cards;

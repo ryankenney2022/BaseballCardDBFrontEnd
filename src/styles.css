@@ -3,8 +3,17 @@
 }
 
 body {
-  margin: 0;
+  margin: none;
   width: 100%;
+}
+
+h1 {
+  margin: 10px;
+  text-align: center;
+}
+
+em {
+  color: orangered;
 }
 form {
   background-color: rgb(100, 100, 249);
@@ -17,16 +26,20 @@ form {
   /* float: left; */
 }
 
-.floatinglabel {
-  padding: none;
-  margin: 0 0;
+.addCard {
+  display: flex;
+  justify-content: center;
+  width: 35%;
+  margin: 2vw 32vw 0;
 }
+
 .btn {
   padding: 3px 5px;
   width: 1rem;
   gap: 5rem 5rem;
   display: flex;
   justify-content: space-between;
+  margin: 2vw 32vw 0;
 }
 .cardbtnSpace {
   display: flex;
@@ -62,8 +75,13 @@ form {
   padding: 15px;
   border-spacing: 4px;
   text-align: center;
-  width: 85vw;
+  width: 95vw;
   gap: 0.5rem;
+}
+
+.floatinglabel {
+  padding: none;
+  margin: 0 0;
 }
 
 .img {
@@ -106,9 +124,4 @@ form {
 
 .site-title {
   font-size: 2rem;
-}
-
-.addCard {
-  display: flex;
-  justify-content: center;
 }

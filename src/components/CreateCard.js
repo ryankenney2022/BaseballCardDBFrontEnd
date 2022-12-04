@@ -14,6 +14,7 @@ function Card(props) {
     team: "",
     position: "",
     frontImgSrc: "",
+    quantity: "",
   });
 
   function handleChange(event) {
@@ -34,6 +35,7 @@ function Card(props) {
       team: card.team,
       position: card.position,
       frontImgSrc: card.frontImgSrc,
+      quantity: card.quantity,
     };
 
     axios.post("http://localhost:5000/addCard", newCard);
@@ -46,6 +48,7 @@ function Card(props) {
       team: "",
       position: "",
       frontImgSrc: "",
+      quantity: "",
     });
   }
 
@@ -57,20 +60,11 @@ function Card(props) {
           label="Brand"
           className="mb-1 floatinglabel"
         >
-          {/* <Form.Control
-          type="string"
-          name="company"
-          placeholder="Topps, Upper Deck, etc..."
-          onChange={handleChange}
-          value={card.company}
-        /> */}
           <Form.Select
             type="string"
             name="company"
-            placeholder="Topps, Upper Deck, etc..."
             onChange={handleChange}
             value={card.company}
-            aria-label="Floating label select example"
             className="floatinglabel"
           >
             <option value="Select">Select card brand...</option>
@@ -92,7 +86,7 @@ function Card(props) {
           <Form.Control
             type="string"
             name="year"
-            placeholder="Topps, Upper Deck, etc..."
+            autoComplete="off"
             onChange={handleChange}
             value={card.year}
           />
@@ -104,11 +98,24 @@ function Card(props) {
           className="mb-1 floatinglabel"
         >
           <Form.Control
-            type="string"
+            type="Number"
             name="number"
-            placeholder="Topps, Upper Deck, etc..."
+            autoComplete="off"
             onChange={handleChange}
             value={card.number}
+          />
+        </FloatingLabel>
+
+        <FloatingLabel
+          controlId="floatingInput"
+          label="Card Quantity"
+          className="mb-1 floatinglabel"
+        >
+          <Form.Control
+            type="Number"
+            name="quantity"
+            onChange={handleChange}
+            value={card.quantity}
           />
         </FloatingLabel>
 
@@ -120,7 +127,7 @@ function Card(props) {
           <Form.Control
             type="string"
             name="player"
-            placeholder="Topps, Upper Deck, etc..."
+            autoComplete="off"
             onChange={handleChange}
             value={card.player}
           />
@@ -134,7 +141,7 @@ function Card(props) {
           <Form.Control
             type="string"
             name="team"
-            placeholder="Topps, Upper Deck, etc..."
+            autoComplete="off"
             onChange={handleChange}
             value={card.team}
           />
@@ -148,25 +155,25 @@ function Card(props) {
           <Form.Control
             type="string"
             name="position"
-            placeholder="Topps, Upper Deck, etc..."
+            autoComplete="off"
             onChange={handleChange}
             value={card.position}
           />
         </FloatingLabel>
         <FloatingLabel
           controlId="floatingInput"
-          label="Front Image Link Address"
+          label="Image Link"
           className="mb-1 floatinglabel"
         >
           <Form.Control
             type="string"
             name="frontImgSrc"
-            placeholder="Topps, Upper Deck, etc..."
+            autoComplete="off"
             onChange={handleChange}
             value={card.frontImgSrc}
           />
         </FloatingLabel>
-        <Button className="btn" variant="dark" size="sm" onClick={submitCard}>
+        <Button variant="contained" size="sm" onClick={submitCard}>
           Submit
         </Button>
       </Row>
